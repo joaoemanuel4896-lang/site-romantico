@@ -1,38 +1,224 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Você ❤️</title>
+
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    background:#111;
-    color:white;
-    font-family:Arial;
-    text-align:center;
-    padding:20px;
+background:linear-gradient(135deg,#000,#1a0010,#33001a);
+color:white;
+text-align:center;
+overflow-x:hidden;
 }
-img{
-    width:300px;
-    border-radius:20px;
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
 }
+
+.hero img{
+width:280px;
+height:280px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #ff4d6d;
+box-shadow:0 0 30px #ff4d6d;
+}
+
 h1{
-    color:#ff4d6d;
+font-size:3rem;
+margin-top:20px;
+color:#ff4d6d;
+}
+
+p{
+max-width:700px;
+margin:15px auto;
+line-height:1.8;
+}
+
+section{
+padding:80px 20px;
+}
+
+.card{
+max-width:800px;
+margin:auto;
+padding:30px;
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+backdrop-filter:blur(5px);
+}
+
+.galeria{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-top:30px;
+}
+
+.galeria img{
+width:250px;
+border-radius:15px;
+transition:.3s;
+}
+
+.galeria img:hover{
+transform:scale(1.05);
+}
+
+.contador{
+font-size:2rem;
+color:#ff4d6d;
+margin-top:20px;
+}
+
+footer{
+padding:30px;
+color:#bbb;
+}
+
+.coracao{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation:cair linear infinite;
+}
+
+@keyframes cair{
+0%{
+transform:translateY(-10px);
+}
+100%{
+transform:translateY(110vh);
+}
 }
 </style>
 </head>
+
 <body>
+
+<div class="hero">
+
+<img src="foto-principal.jpg" alt="Foto dela">
 
 <h1>Para Você ❤️</h1>
 
-<img src="https://via.placeholder.com/300" alt="Foto">
-
 <p>
-Você é uma das pessoas mais especiais que já apareceu na minha vida.
+Desde que você apareceu na minha vida, tudo ficou mais bonito.
+Cada conversa, cada sorriso e cada momento ao seu lado se tornou especial.
 </p>
 
-<audio controls>
-    <source src="musica.mp3" type="audio/mpeg">
+<audio controls autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
 </audio>
+
+</div>
+
+<section>
+
+<div class="card">
+
+<h2>💌 Minha Carta Para Você</h2>
+
+<p>
+Você é uma das pessoas mais incríveis que já conheci.
+Seu jeito, seu sorriso e sua presença conseguem transformar qualquer dia comum em algo especial.
+
+Obrigado por existir e por fazer parte da minha vida.
+❤️
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>⏳ Nosso Tempo</h2>
+
+<div class="contador" id="contador"></div>
+
+</section>
+
+<section>
+
+<h2>📸 Nossos Momentos</h2>
+
+<div class="galeria">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+
+</div>
+
+</section>
+
+<footer>
+Feito com amor ❤️
+</footer>
+
+<script>
+
+const dataInicio = new Date("2025-01-01");
+
+function atualizarContador(){
+
+const hoje = new Date();
+
+const diferenca = hoje - dataInicio;
+
+const dias = Math.floor(diferenca / (1000*60*60*24));
+
+document.getElementById("contador").innerHTML =
+dias + " dias juntos ❤️";
+}
+
+atualizarContador();
+
+function criarCoracao(){
+
+const coracao = document.createElement("div");
+
+coracao.classList.add("coracao");
+
+coracao.innerHTML="❤️";
+
+coracao.style.left=Math.random()*100+"vw";
+
+coracao.style.animationDuration=
+(Math.random()*5+5)+"s";
+
+document.body.appendChild(coracao);
+
+setTimeout(()=>{
+coracao.remove();
+},10000);
+
+}
+
+setInterval(criarCoracao,400);
+
+</script>
 
 </body>
 </html>
+```
+
