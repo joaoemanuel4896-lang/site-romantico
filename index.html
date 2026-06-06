@@ -4,144 +4,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Você ❤️</title>
+<title>Para Synara ❤️</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#000,#1a0010,#33001a);
+background:linear-gradient(135deg,#090909,#1b0010,#32001d);
 color:white;
-text-align:center;
 overflow-x:hidden;
 }
 
 .hero{
-min-height:100vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+text-align:center;
 padding:20px;
+position:relative;
 }
 
-.hero img{
-width:280px;
-height:280px;
+.hero::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.35);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.foto-principal{
+width:300px;
+height:300px;
 border-radius:50%;
 object-fit:cover;
-border:5px solid #ff4d6d;
-box-shadow:0 0 30px #ff4d6d;
+border:6px solid #ff4d88;
+box-shadow:0 0 40px #ff4d88;
 }
 
 h1{
-font-size:3rem;
+font-size:4rem;
+color:#ff4d88;
 margin-top:20px;
-color:#ff4d6d;
 }
 
-p{
+.subtitulo{
+font-size:1.3rem;
+margin-top:10px;
 max-width:700px;
-margin:15px auto;
-line-height:1.8;
+}
+
+.botao{
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+background:#ff4d88;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-size:18px;
+transition:.3s;
+}
+
+.botao:hover{
+transform:scale(1.05);
 }
 
 section{
-padding:80px 20px;
+padding:90px 20px;
+text-align:center;
 }
 
 .card{
-max-width:800px;
+max-width:900px;
 margin:auto;
-padding:30px;
 background:rgba(255,255,255,0.08);
-border-radius:20px;
-backdrop-filter:blur(5px);
+padding:35px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+}
+
+.card h2{
+color:#ff4d88;
+margin-bottom:20px;
+}
+
+.card p{
+line-height:1.9;
+font-size:18px;
+}
+
+.contador{
+font-size:2rem;
+color:#ff4d88;
+margin-top:25px;
 }
 
 .galeria{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
 margin-top:30px;
 }
 
 .galeria img{
-width:250px;
-border-radius:15px;
-transition:.3s;
+width:100%;
+border-radius:20px;
+transition:.4s;
+cursor:pointer;
 }
 
 .galeria img:hover{
 transform:scale(1.05);
 }
 
-.contador{
-font-size:2rem;
-color:#ff4d6d;
-margin-top:20px;
-}
-
 footer{
-padding:30px;
-color:#bbb;
+padding:40px;
+text-align:center;
+color:#ccc;
 }
 
 .coracao{
 position:fixed;
-top:-10px;
+top:-20px;
 font-size:20px;
-animation:cair linear infinite;
+animation:cair linear forwards;
+pointer-events:none;
 }
 
 @keyframes cair{
-0%{
-transform:translateY(-10px);
-}
-100%{
+to{
 transform:translateY(110vh);
 }
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="hero">
+<section class="hero">
 
-<img src="foto-principal.jpg" alt="Foto dela">
+<div class="hero-content">
 
-<h1>Para Você ❤️</h1>
+<img src="foto-principal.jpg" class="foto-principal">
 
-<p>
-Desde que você apareceu na minha vida, tudo ficou mais bonito.
-Cada conversa, cada sorriso e cada momento ao seu lado se tornou especial.
+<h1>Synara ❤️</h1>
+
+<p class="subtitulo">
+Desde o primeiro momento que você apareceu na minha vida,
+meus dias ficaram mais leves, mais felizes e mais especiais.
 </p>
 
-<audio controls autoplay loop>
+<a href="#carta" class="botao">
+Abrir Minha Carta 💌
+</a>
+
+<br><br>
+
+<audio controls loop>
 <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 </div>
 
-<section>
+</section>
+
+<section id="carta">
 
 <div class="card">
 
-<h2>💌 Minha Carta Para Você</h2>
+<h2>💌 Uma Mensagem Para Você</h2>
 
 <p>
-Você é uma das pessoas mais incríveis que já conheci.
-Seu jeito, seu sorriso e sua presença conseguem transformar qualquer dia comum em algo especial.
+Synara, talvez eu não consiga colocar em palavras tudo o que sinto,
+mas queria que você soubesse que cada conversa nossa faz meu dia melhor.
 
-Obrigado por existir e por fazer parte da minha vida.
-❤️
+Seu sorriso é lindo, seu jeito é especial e sua presença tem um valor enorme para mim.
+
+Obrigado por existir e por fazer parte da minha vida. ❤️
 </p>
 
 </div>
@@ -152,7 +207,7 @@ Obrigado por existir e por fazer parte da minha vida.
 
 <h2>⏳ Nosso Tempo</h2>
 
-<div class="contador" id="contador"></div>
+<div id="contador" class="contador"></div>
 
 </section>
 
@@ -165,60 +220,60 @@ Obrigado por existir e por fazer parte da minha vida.
 <img src="foto1.jpg">
 <img src="foto2.jpg">
 <img src="foto3.jpg">
-<img src="foto4.jpg">
 
 </div>
 
 </section>
 
 <footer>
-Feito com amor ❤️
+Feito com carinho para Synara ❤️
 </footer>
 
 <script>
 
-const dataInicio = new Date("2025-01-01");
+const inicio = new Date("2026-06-01");
 
-function atualizarContador(){
+function atualizar(){
 
-const hoje = new Date();
+const agora = new Date();
+const diferenca = agora - inicio;
 
-const diferenca = hoje - dataInicio;
-
-const dias = Math.floor(diferenca / (1000*60*60*24));
+const dias = Math.floor(
+diferenca / (1000*60*60*24)
+);
 
 document.getElementById("contador").innerHTML =
-dias + " dias juntos ❤️";
+dias + " dias ❤️";
 }
 
-atualizarContador();
+setInterval(atualizar,1000);
+atualizar();
 
 function criarCoracao(){
 
-const coracao = document.createElement("div");
+const c = document.createElement("div");
 
-coracao.classList.add("coracao");
+c.classList.add("coracao");
 
-coracao.innerHTML="❤️";
+c.innerHTML="❤️";
 
-coracao.style.left=Math.random()*100+"vw";
+c.style.left=Math.random()*100+"vw";
 
-coracao.style.animationDuration=
-(Math.random()*5+5)+"s";
+c.style.animationDuration=
+(Math.random()*4+4)+"s";
 
-document.body.appendChild(coracao);
+document.body.appendChild(c);
 
 setTimeout(()=>{
-coracao.remove();
-},10000);
+c.remove();
+},8000);
 
 }
 
-setInterval(criarCoracao,400);
+setInterval(criarCoracao,300);
 
 </script>
 
 </body>
 </html>
 ```
-
