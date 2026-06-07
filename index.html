@@ -1,10 +1,9 @@
- html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para Synara ❤️</title>
+<title>Para Synara 🕷️❤️</title>
 
 <style>
 
@@ -16,11 +15,23 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#090909,#1b0010,#32001d);
+background: radial-gradient(circle at top, #0b0b0b, #1a0010, #000814);
 color:white;
 overflow-x:hidden;
 }
 
+/* TEIA DE FUNDO */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background-image:url("https://www.transparenttextures.com/patterns/web.png");
+opacity:0.08;
+pointer-events:none;
+}
+
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -32,45 +43,38 @@ padding:20px;
 position:relative;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.35);
-}
-
 .hero-content{
-position:relative;
 z-index:2;
 }
 
 .foto-principal{
-width:300px;
-height:300px;
+width:280px;
+height:280px;
 border-radius:50%;
 object-fit:cover;
-border:6px solid #ff4d88;
-box-shadow:0 0 40px #ff4d88;
+border:6px solid #ff1e1e;
+box-shadow:0 0 50px #1e90ff;
 }
 
 h1{
 font-size:4rem;
-color:#ff4d88;
+color:#ff1e1e;
+text-shadow:2px 2px #1e90ff;
 margin-top:20px;
 }
 
 .subtitulo{
-font-size:1.3rem;
+font-size:1.2rem;
 margin-top:10px;
 max-width:700px;
+opacity:0.9;
 }
 
 .botao{
 display:inline-block;
 margin-top:25px;
 padding:15px 35px;
-background:#ff4d88;
+background:linear-gradient(45deg,#ff1e1e,#1e90ff);
 color:white;
 text-decoration:none;
 border-radius:40px;
@@ -79,11 +83,12 @@ transition:.3s;
 }
 
 .botao:hover{
-transform:scale(1.05);
+transform:scale(1.08);
 }
 
+/* SEÇÕES */
 section{
-padding:90px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
@@ -94,10 +99,11 @@ background:rgba(255,255,255,0.08);
 padding:35px;
 border-radius:25px;
 backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
 }
 
 .card h2{
-color:#ff4d88;
+color:#ff1e1e;
 margin-bottom:20px;
 }
 
@@ -106,15 +112,17 @@ line-height:1.9;
 font-size:18px;
 }
 
+/* CONTADOR */
 .contador{
 font-size:2rem;
-color:#ff4d88;
-margin-top:25px;
+color:#1e90ff;
+margin-top:20px;
 }
 
+/* GALERIA */
 .galeria{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 max-width:1000px;
 margin:auto;
@@ -125,19 +133,14 @@ margin-top:30px;
 width:100%;
 border-radius:20px;
 transition:.4s;
-cursor:pointer;
+border:2px solid #ff1e1e;
 }
 
 .galeria img:hover{
-transform:scale(1.05);
+transform:scale(1.08);
 }
 
-footer{
-padding:40px;
-text-align:center;
-color:#ccc;
-}
-
+/* CORAÇÕES */
 .coracao{
 position:fixed;
 top:-20px;
@@ -152,6 +155,12 @@ transform:translateY(110vh);
 }
 }
 
+footer{
+padding:40px;
+text-align:center;
+color:#aaa;
+}
+
 </style>
 </head>
 
@@ -163,16 +172,14 @@ transform:translateY(110vh);
 
 <img src="foto5.jpg" class="foto-principal">
 
-<h1>Synara ❤️</h1>
+<h1>Synara 🕷️❤️</h1>
 
 <p class="subtitulo">
-Desde o primeiro momento que você apareceu na minha vida,
-meus dias ficaram mais leves, mais felizes e mais especiais.
+Você entrou na minha vida igual o Homem-Aranha entra em ação...
+de repente, mas salvando tudo ao redor do meu coração.
 </p>
 
-<a href="#carta" class="botao">
-Abrir Minha Carta 💌
-</a>
+<a href="#carta" class="botao">💌 Abrir Minha Carta</a>
 
 <br><br>
 
@@ -182,9 +189,7 @@ Abrir Minha Carta 💌
 width="350"
 height="200"
 src="https://www.youtube.com/embed/KS_TrJOQB-g"
-title="Os Anjos Cantam"
 frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen>
 </iframe>
 
@@ -196,15 +201,14 @@ allowfullscreen>
 
 <div class="card">
 
-<h2>💌 Uma Mensagem Para Você</h2>
+<h2>💌 Para Você</h2>
 
 <p>
-Synara, talvez eu não consiga colocar em palavras tudo o que sinto,
-mas queria que você soubesse que cada conversa nossa faz meu dia melhor.
+Synara, você é como uma heroína na minha vida.
+Não precisa de poderes pra me deixar feliz, seu sorriso já faz isso.
 
-Seu sorriso é lindo, seu jeito é especial e sua presença tem um valor enorme para mim.
-
-Obrigado por existir e por fazer parte da minha vida. ❤️
+Se o Homem-Aranha protege a cidade,
+eu só queria proteger o seu coração ❤️
 </p>
 
 </div>
@@ -214,27 +218,24 @@ Obrigado por existir e por fazer parte da minha vida. ❤️
 <section>
 
 <h2>⏳ Nosso Tempo</h2>
-
 <div id="contador" class="contador"></div>
 
 </section>
 
 <section>
 
-<h2>📸 A princesa mais linda do mundo</h2>
+<h2>📸 Memórias</h2>
 
 <div class="galeria">
-
 <img src="foto5.jpg">
 <img src="foto7.jpg">
 <img src="foto6.jpg">
-
 </div>
 
 </section>
 
 <footer>
-Feito com carinho para Synara ❤️
+Feito com carinho para Synara ❤️🕷️
 </footer>
 
 <script>
@@ -242,40 +243,22 @@ Feito com carinho para Synara ❤️
 const inicio = new Date("2026-06-01");
 
 function atualizar(){
-
 const agora = new Date();
-const diferenca = agora - inicio;
-
-const dias = Math.floor(
-diferenca / (1000*60*60*24)
-);
-
-document.getElementById("contador").innerHTML =
-dias + " dias ❤️";
+const dias = Math.floor((agora - inicio)/(1000*60*60*24));
+document.getElementById("contador").innerHTML = dias + " dias ❤️";
 }
 
 setInterval(atualizar,1000);
 atualizar();
 
 function criarCoracao(){
-
 const c = document.createElement("div");
-
 c.classList.add("coracao");
-
 c.innerHTML="❤️";
-
 c.style.left=Math.random()*100+"vw";
-
-c.style.animationDuration=
-(Math.random()*4+4)+"s";
-
+c.style.animationDuration=(Math.random()*4+4)+"s";
 document.body.appendChild(c);
-
-setTimeout(()=>{
-c.remove();
-},8000);
-
+setTimeout(()=>c.remove(),8000);
 }
 
 setInterval(criarCoracao,300);
@@ -284,4 +267,3 @@ setInterval(criarCoracao,300);
 
 </body>
 </html>
-```
